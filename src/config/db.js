@@ -4,11 +4,11 @@ const { Pool } = pg;
 const { DB_PASS, DB_USER, DB_HOST, DB_PORT, DB } = process.env;
 
 const pool = new Pool({
-	user: "postgres",
-	host: "localhost",
-	database: "car_rental",
-	password: "1234",
-	port: 5432,
+	user: DB_USER,
+	host: DB_HOST,
+	database: DB,
+	password: DB_PASS,
+	port: DB_PORT,
 });
 
 pool.on("error", (err, client) => {
